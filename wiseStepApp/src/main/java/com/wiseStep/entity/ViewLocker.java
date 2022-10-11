@@ -1,0 +1,14 @@
+package com.wiseStep.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ViewLocker {
+
+	private Integer lockerId;
+
+}
