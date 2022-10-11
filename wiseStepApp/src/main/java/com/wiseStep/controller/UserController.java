@@ -1,5 +1,4 @@
 package com.wiseStep.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +17,8 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+//	private
+	
 	// create user api // http://localhost:8080/api/user
 		@PostMapping
 		public ResponseEntity<Users> savePost(@RequestBody Users user) {
@@ -26,6 +27,6 @@ public class UserController {
 
 		}
 		
-		//why not heppenig
+		
 
 }
