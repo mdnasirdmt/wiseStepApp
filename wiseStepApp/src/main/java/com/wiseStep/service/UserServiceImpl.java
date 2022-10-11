@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService{
 	public Users getByid(Integer id) {
 		
 		return usersRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFound("post not found by this id to show " + id));
+				.orElseThrow(() -> new ResourceNotFound("user not found by this id to show " + id));
 	}
 
 	@Override
