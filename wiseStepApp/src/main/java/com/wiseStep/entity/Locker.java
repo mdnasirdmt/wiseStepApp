@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
@@ -29,6 +30,7 @@ public class Locker {
 
 	@NotNull(message = "it is mandatory ")
 	@Size(min = 4, max = 6, message = "size should be min 4 and max 6")
+	@Pattern(regexp = "[a-z]{4,6}$", message = "min 4 and max 6")
 	private Integer passcode;
 
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "locker")

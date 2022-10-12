@@ -1,4 +1,6 @@
 package com.wiseStep.controller;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +26,7 @@ public class UserController {
 	
 	// create user api // http://localhost:8080/api/user
 		@PostMapping
-		public ResponseEntity<Users> savePost(@RequestBody Users user) {
+		public ResponseEntity<Users> savePost(@Valid @RequestBody Users user) {
 			
 			user.setLocker(user.getLocker());
 			
