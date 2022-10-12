@@ -2,6 +2,7 @@ package com.wiseStep.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,8 +42,8 @@ public class Users {
 	@Email
 	private String email;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="fk_userId")
+	@OneToOne(fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
+	@JoinColumn(name="locker_id")
 	private Locker locker;
 
 }
