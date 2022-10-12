@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
@@ -26,7 +27,8 @@ public class Locker {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer lockerId;
 
-	@Size(min = 4, max = 6)
+	@NotNull(message = "it is mandatory ")
+	@Size(min = 4, max = 6, message = "size should be min 4 and max 6")
 	private Integer passcode;
 
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "locker")
